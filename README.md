@@ -51,7 +51,6 @@ with ControllerResource() as joystick:
     kit.motor4.throttle = m1m4*(-1)
   time.sleep(0.1)
 ```
-```markdown
 
 - Bulleted
 - List
@@ -62,7 +61,6 @@ with ControllerResource() as joystick:
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](IMG_1742.jpg)
-```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
