@@ -27,15 +27,15 @@ from adafruit_motorkit import MotorKit
 dc = MotorKit()
 import time
  
-# Get a joystick
+# Main Loop
 while True:
  try:
   with ControllerResource() as joystick:
-   # Loop until disconnected
+   # Will raise an exception if no controller/joystick is connected
    while joystick.connected:
-    # Get a corrected value for the left stick x-axis
+    # get x-axis value of the left analog stick
     left_x = joystick.lx
-    # We can also get values as attributes:
+    # get y-axis value of the left analog stick
     left_y = joystick.ly
     m1m4 = left_y + left_x
     m2m3 = left_y - left_x
