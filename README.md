@@ -1,10 +1,23 @@
-## Welcome to GitHub Pages
+## Welcome to the DC-Rover Project Page!
+
+### About DC-Rover 
+It's our take to the classic Robotic Rover that integrates a Raspberry Pi Zero W, an Adafruit Motor Bonnet, a Pi Camera, Tom Oinn's Approx. Engineering Input Library, 2 x 18650 batteries, 4WD TT DC-Motors, Omni-directional Mechanum wheels and Our Own Design Rover Chassis.
+
+### Complete Required Parts List:
+* Raspberry Pi W without headers
+* Adafruit Motor Bonnet for Raspberry Pi
+* Pi Camera
+* 2 x 18650 3.7v batteries
+* 18650 battery holder with On/Off switch
+* 4 x TT DC-Motors
+* 4 x Omni-directional Mechanum wheels
+* Tytre3d's DC-Rover 3D Printed parts
 
 You can use the [editor on GitHub](https://github.com/tytre3d/DC-Rover/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### DC-Rover
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
