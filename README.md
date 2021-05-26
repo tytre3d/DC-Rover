@@ -8,12 +8,50 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
+```Python
+from approxeng.input.selectbinder import ControllerResource
+from adafruit_motorkit import MotorKit
+kit = MotorKit()
+import time
+ 
+# Get a joystick
+with ControllerResource() as joystick:
+  # Loop until disconnected
+  while joystick.connected:
+  # Get a corrected value for the left stick x-axis
+  left_x = joystick.lx
+  # We can also get values as attributes:
+  left_y = joystick.ly
+  m1m4 = left_y + left_x
+  m2m3 = left_y - left_x
+  lstrafe = joystick['dleft']
+  rstrafe = joystick['dright']
+  if m1m4 > 1:
+    m1m4 = 0.75
+  if m1m4 < -1:
+    m1m4 = -0.75
+  if m2m3 > 1:
+    m2m3 = 0.75
+  if m2m3 < -1:
+    m2m3 = -0.75
+  if lstrafe:
+    kit.motor1.throttle = 0.75
+    kit.motor2.throttle = -0.75
+    kit.motor3.throttle = 0.75
+    kit.motor4.throttle = -0.75
+  elif rstrafe:
+    kit.motor1.throttle = -0.75
+    kit.motor2.throttle = 0.75
+    kit.motor3.throttle = -0.75
+    kit.motor4.throttle = 0.75
+  else:
+    kit.motor1.throttle = m1m4*(-1)
+    kit.motor2.throttle = m2m3*(-1)
+    kit.motor3.throttle = m2m3*(-1)
+    kit.motor4.throttle = m1m4*(-1)
+  time.sleep(0.1)
+```
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
 
 - Bulleted
 - List
