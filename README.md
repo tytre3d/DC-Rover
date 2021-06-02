@@ -66,8 +66,9 @@ while True:
       dc.motor4.throttle = m1m4*(-1)
     time.sleep(0.1)
   except IOError:
-    print("No Joystick Found!")
-    time.sleep(1)
+   print("No Joystick Found!")
+   time.sleep(1)
+   
 ```
 
 - Bulleted
