@@ -31,7 +31,6 @@ import time
 while True:
  try:
   with ControllerResource() as joystick:
-   # Will raise an exception if no controller/joystick is connected
    while joystick.connected:
     # get x-axis value of the left analog stick
     left_x = joystick.lx
@@ -65,9 +64,10 @@ while True:
       dc.motor3.throttle = m2m3*(-1)
       dc.motor4.throttle = m1m4*(-1)
     time.sleep(0.1)
-  except IOError:
-   print("No Joystick Found!")
-   time.sleep(1)
+ except IOError:
+  # Will raise an exception if no controller/joystick is connected
+  print("No Joystick Found!")
+  time.sleep(1)
    
 ```
 
