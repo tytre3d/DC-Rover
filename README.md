@@ -36,10 +36,17 @@ while True:
     left_x = joystick.lx
     # get y-axis value of the left analog stick
     left_y = joystick.ly
+    
+    #get d-pad left
+    lstrafe = joystick['dleft']
+    #get d-pad right
+    rstrafe = joystick['dright']
+    
+    #Simple turn logic
     m1m4 = left_y + left_x
     m2m3 = left_y - left_x
-    lstrafe = joystick['dleft']
-    rstrafe = joystick['dright']
+    
+    #Cap motor speed to 75% throttle
     if m1m4 > 1:
       m1m4 = 0.75
     if m1m4 < -1:
@@ -48,16 +55,20 @@ while True:
       m2m3 = 0.75
     if m2m3 < -1:
       m2m3 = -0.75
+      
+    # strafe left when left d-pad button is pressed
     if lstrafe:
       dc.motor1.throttle = 0.75
       dc.motor2.throttle = -0.75
       dc.motor3.throttle = -0.75
       dc.motor4.throttle = 0.75
+    #strafe right when right d-pad button is pressed
     elif rstrafe:
       dc.motor1.throttle = -0.75
       dc.motor2.throttle = 0.75
       dc.motor3.throttle = 0.75
       dc.motor4.throttle = -0.75
+    #motor control using left analog stick
     else:
       dc.motor1.throttle = m2m3*(-1)
       dc.motor2.throttle = m2m3*(-1)
