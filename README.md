@@ -7,6 +7,7 @@ from approxeng.input.selectbinder import ControllerResource
 from adafruit_motorkit import MotorKit
 dc = MotorKit()
 import time
+import subprocess
  
 # Main Loop
 while True:
@@ -22,6 +23,12 @@ while True:
     lstrafe = joystick['dleft']
     #get d-pad right
     rstrafe = joystick['dright']
+    
+    #get cross/a button
+    cross = joystick['cross']
+    
+    #get circle/b button
+    circle = joystick['circle']
     
     #Simple turn logic
     m1m4 = left_y + left_x
@@ -49,6 +56,12 @@ while True:
       dc.motor2.throttle = 0.75
       dc.motor3.throttle = 0.75
       dc.motor4.throttle = -0.75
+    #take a photo when cross/a button is pressed and save it as img.jpg in the root directory
+    elif cross:
+      subprocess.Popen(["raspistill", "-vf", "-hf", "-o", "img.jpg"])
+    #take a 5 second video when circle/b is pressed and save it as video.h264 in the root directory
+    elif circle:
+      subprocess.Popen(["raspivid", "-vf", "-hf", "-o", "video.h264", "-t", "5000"])
     #motor control using left analog stick
     else:
       dc.motor1.throttle = m2m3*(-1)
