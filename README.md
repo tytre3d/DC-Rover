@@ -1,25 +1,6 @@
 ## Welcome to the DC-Rover Project Page!
 
-### About DC-Rover 
-It's our take to the classic Robotic Rover that integrates a Raspberry Pi Zero W, an Adafruit Motor Bonnet, a Pi Camera, Tom Oinn's Approx. Engineering Input Library, 2 x 18650 batteries, 4WD TT DC-Motors, Omni-directional Mechanum wheels and Our Own Design Rover Chassis.
-
-### Complete Required Parts List:
-* Raspberry Pi W without headers
-* Adafruit Motor Bonnet for Raspberry Pi
-* Pi Camera
-* 2 x 18650 3.7v batteries
-* 18650 battery holder with On/Off switch
-* 4 x TT DC-Motors
-* 4 x Omni-directional Mechanum wheels
-* Tytre3d's DC-Rover 3D Printed parts
-
-You can use the [editor on GitHub](https://github.com/tytre3d/DC-Rover/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### DC-Rover
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Sample Code
 
 ```Python
 from approxeng.input.selectbinder import ControllerResource
@@ -85,22 +66,3 @@ while True:
 
 ```
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](IMG_1742.jpg)
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tytre3d/DC-Rover/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
