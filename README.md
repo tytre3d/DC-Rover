@@ -51,17 +51,17 @@ while True:
     if lstrafe:
       dc.motor1.throttle = 0.75
       dc.motor2.throttle = -0.75
-      dc.motor3.throttle = 0.75
-      dc.motor4.throttle = -0.75
+      dc.motor3.throttle = -0.75
+      dc.motor4.throttle = 0.75
     elif rstrafe:
       dc.motor1.throttle = -0.75
       dc.motor2.throttle = 0.75
-      dc.motor3.throttle = -0.75
-      dc.motor4.throttle = 0.75
+      dc.motor3.throttle = 0.75
+      dc.motor4.throttle = -0.75
     else:
-      dc.motor1.throttle = m1m4*(-1)
+      dc.motor1.throttle = m2m3*(-1)
       dc.motor2.throttle = m2m3*(-1)
-      dc.motor3.throttle = m2m3*(-1)
+      dc.motor3.throttle = m1m4*(-1)
       dc.motor4.throttle = m1m4*(-1)
     time.sleep(0.1)
  except IOError:
